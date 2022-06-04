@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/.venv": true,
+    "**/node_modules": true,
+    "**/.git": true
+  },
+  "editor.tabSize": 4,
+  "cSpell.words": [
+    "packr"
+  ]
+}

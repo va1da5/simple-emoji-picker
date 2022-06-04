@@ -1,0 +1,17 @@
+:root {
+  --background: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #222;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--background);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
