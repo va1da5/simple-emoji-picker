@@ -9,10 +9,9 @@ Only Linux is currently supported. The rest of the platforms are covered nativel
 Download file from releases section and run it.
 
 ```bash
-curl -o emoji-picker https://github.com/...
+curl -o emoji-picker https://github.com/va1da5/simple-emoji-picker/releases/download/v0.0.1/emoji-picker
 
 sudo mv emoji-picker /usr/local/bin/emoji-picker
-
 ```
 
 ## 🤗 Usage
