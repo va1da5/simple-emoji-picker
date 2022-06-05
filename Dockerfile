@@ -8,7 +8,6 @@ WORKDIR /go/src/
 COPY go.mod .
 COPY go.sum .
 
-# RUN go mod tidy
 RUN go mod download
 RUN go mod download github.com/gobuffalo/packr/v2
 RUN go get github.com/spf13/cobra

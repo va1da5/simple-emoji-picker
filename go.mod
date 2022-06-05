@@ -1,10 +1,9 @@
-module emoji-picker
+module github.com/va1da5/simple-emoji-picker
 
 go 1.18
 
 require (
 	github.com/gobuffalo/packr/v2 v2.8.3
-	github.com/webview/webview v0.0.0-20220604133612-aed50ca44c9e
 )
 
 require (
