@@ -12,7 +12,7 @@ function App() {
       });
   }, []);
 
-  return <emoji-picker></emoji-picker>;
+  return <emoji-picker />;
 }
 
 export default App;
