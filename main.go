@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/gobuffalo/packr/v2"
-	"github.com/webview/webview"
+	"github.com/va1da5/simple-emoji-picker/webview"
 )
 
 func getRandomPort() string {
@@ -38,8 +38,7 @@ func main() {
 	w := webview.New(debug)
 	defer w.Destroy()
 	w.SetTitle("🍭 Emoji Picker")
-
-	w.SetSize(344, 400, webview.HintNone)
+	w.SetSize(344, 400, webview.HintFixed)
 	w.Navigate(fmt.Sprintf("http://localhost%s", port))
 	w.Run()
 }

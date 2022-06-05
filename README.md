@@ -37,8 +37,8 @@ make build-all
 
 ## 📝 Todo
 
-- [ ] Disable Windows resize option while keeping the preferred window size
-- [ ] Start application window near a mouse cursor
+- [x] Disable Windows resize option while keeping the preferred window size
+- [ ] Start application window near a mouse cursor - *harder than one would expect*
 
 
 ## 🗂️ References
@@ -49,3 +49,5 @@ make build-all
 - [Webview Project](https://github.com/webview/webview)
 - [Is it possible to use a local HTML file using Go and webview?](https://stackoverflow.com/questions/66813122/is-it-possible-to-use-a-local-html-file-using-go-and-webview)
 - [How to create a native macOS app on Go (Golang) and React.js with full code protection](https://dev.to/koddr/how-to-create-a-native-macos-app-on-go-golang-and-react-js-with-full-code-protection-part-1-463k)
+- [Gtk 4.0](https://docs.gtk.org/gtk4/index.html)
+- [WebKit2GTK+ Reference Manual](https://webkitgtk.org/reference/webkit2gtk/1.7.3/index.html)
