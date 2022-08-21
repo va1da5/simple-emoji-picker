@@ -9,10 +9,8 @@ build: build-image
 .PHONY: build-local
 build-local:
 # @go mod tidy
-	@packr2 -v
 	@go build -o ./build/emoji-picker
 	@chown -R $(USERID):$(USERID) ./build
-	@chown -R $(USERID):$(USERID) ./packrd
 
 .PHONY: build-gui
 build-gui:

@@ -1,37 +1,35 @@
 package main
 
 import (
+	"embed"
 	"fmt"
-	"math/rand"
+	"io/fs"
 	"net/http"
 
-	"github.com/gobuffalo/packr/v2"
 	"github.com/va1da5/simple-emoji-picker/webview"
 )
 
-func getRandomPort() string {
-	min := 10000
-	max := 65535
-	return fmt.Sprintf(":%d", rand.Intn(max-min)+min)
+//go:embed gui/build
+var content embed.FS
+
+func fsHandler() http.Handler {
+	sub, err := fs.Sub(content, "gui/build")
+	if err != nil {
+		panic(err)
+	}
+
+	return http.FileServer(http.FS(sub))
 }
 
 func main() {
-	port := getRandomPort()
+	addr := "localhost:44665"
 	debug := false
 
 	if debug == true {
-		fmt.Printf("Listening on  http://localhost%s/\n", port)
+		fmt.Printf("Listening on  http://%s/\n", addr)
 	}
 
-	// Bind folder path for packaging with Packr
-	folder := packr.New("static", "./gui/build")
-
-	// Handle to ./static/build folder on root path
-	http.Handle("/", http.FileServer(folder))
-
-	// Run server at port 8000 as goroutine
-	// for non-block working
-	go http.ListenAndServe(port, nil)
+	go http.ListenAndServe(addr, fsHandler())
 
 	// Create new webview
 
@@ -39,6 +37,6 @@ func main() {
 	defer w.Destroy()
 	w.SetTitle("🍭 Emoji Picker")
 	w.SetSize(344, 400, webview.HintFixed)
-	w.Navigate(fmt.Sprintf("http://localhost%s", port))
+	w.Navigate(fmt.Sprintf("http://%s", addr))
 	w.Run()
 }
